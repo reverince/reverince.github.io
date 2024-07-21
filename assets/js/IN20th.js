@@ -37,7 +37,6 @@ window.addEventListener('resize', setImgsMaxHeight);
 // Load
 
 let lastVideoIndex = 1;
-
 window.addEventListener('load', (event) => {
     console.log('Welcome to TH IN 20th Anniversary Collaboration.\nPlease refrain from redistributing the artworks without permission. Thank you! 😇');
 
@@ -86,7 +85,7 @@ window.addEventListener('load', (event) => {
 
     // section
     const sections = [
-        { id: 'title', n: 1 },
+        { id: 'title', n: 4 },
         { id: 'team-boundary', n: 1 },
         { id: 'team-magic', n: 1 },
         { id: 'team-scarlet', n: 1 },
@@ -115,9 +114,6 @@ window.addEventListener('load', (event) => {
         const videoElement = document.getElementById('bg-video');
         const videoElement2 = document.getElementById('bg-video-2');
 
-        videoElement.style.top = `${window.scrollY}px`;
-        videoElement2.style.top = `${window.scrollY}px`;
-
         const scrollPosition = window.scrollY + window.innerHeight * 0.6;
         let found = false;
         for (let section of sectionElements) {
@@ -139,17 +135,8 @@ window.addEventListener('load', (event) => {
                 break;
             }
         }
-        // if (!found) {
-        //     const lastSrc = videoElement.querySelector('source').getAttribute('src');
-        //     const newSrc = '/assets/img/bg/bg-3.webm';
-        //     if (lastSrc != newSrc)
-        //     {
-        //         videoElement.querySelector('source').setAttribute('src', newSrc);
-        //         videoElement.load();
-        //         videoElement.play();
-        //     }
-        // }
     };
+    updateBgVideo();
     window.addEventListener('scroll', updateBgVideo);
     window.addEventListener('resize', updateBgVideo);
 
@@ -246,7 +233,6 @@ window.addEventListener('load', (event) => {
 
     updateBgVideo();
     $('#loading').fadeOut('slow');
-    //scrollToTop();
 
     // appear
     const appearElement = document.querySelector('.appear');
