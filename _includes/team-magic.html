@@ -1,0 +1,86 @@
+<div class="row align-items-center">
+    <h2 class="team-title scale-x" style="text-shadow: 4px 4px 5px rgb(250, 230, 190)"><b>금주<small>의
+            </small>영창</b><small> 팀</small></h2>
+    <p><i>마법의 숲에 사는 <b>마법사 두 사람</b>.</i></p>
+    {% if art.swap-text == True %}
+    <div class="col">
+        <h4><small>○</small>요괴조술</h4>
+        <div class="scale-x">
+            <h3 style="color: rgb(190, 190, 240); text-shadow: 4px 4px 5px rgb(190, 190, 240); margin-bottom: 0">일곱
+                빛깔 인형사</h3>
+            <h2 class="b" style="color: rgb(190, 190, 240); text-shadow: 4px 4px 5px rgb(190, 190, 240)">앨리스 마가트로이드
+            </h2>
+        </div>
+    </div>
+    <div class="col">
+        <h4><small>□</small>인간조술</h4>
+        <div class="scale-x">
+            <h3 style="color: rgb(250, 230, 190); text-shadow: 4px 4px 5px rgb(250, 230, 190); margin-bottom: 0">
+                평범한 마법사</h3>
+            <h2 class="b" style="color: rgb(250, 230, 190); text-shadow: 4px 4px 5px rgb(250, 230, 190)">키리사메 마리사
+            </h2>
+        </div>
+    </div>
+    {% else %}
+    <div class="col">
+        <h4><small>□</small>인간조술</h4>
+        <div class="scale-x">
+            <h3 style="color: rgb(250, 230, 190); text-shadow: 4px 4px 5px rgb(250, 230, 190); margin-bottom: 0">
+                평범한 마법사</h3>
+            <h2 class="b" style="color: rgb(250, 230, 190); text-shadow: 4px 4px 5px rgb(250, 230, 190)">키리사메 마리사
+            </h2>
+        </div>
+    </div>
+    <div class="col">
+        <h4><small>○</small>요괴조술</h4>
+        <div class="scale-x">
+            <h3 style="color: rgb(190, 190, 240); text-shadow: 4px 4px 5px rgb(190, 190, 240); margin-bottom: 0">일곱
+                빛깔 인형사</h3>
+            <h2 class="b" style="color: rgb(190, 190, 240); text-shadow: 4px 4px 5px rgb(190, 190, 240)">앨리스 마가트로이드
+            </h2>
+        </div>
+    </div>
+    {% endif %}
+</div>
+{% include img_container.html %}
+<div class="row">
+    {% if art.swap-text == True %}
+    <div class="col">
+        <p><i><b>인형을 부리는 마법사.</b><br>인형은 불평하지 않기 때문에 행복.</i></p>
+        <p class="left verbose"><b>이동속도: </b>★★<br>
+            <b>사역마: </b>「상하이 인형」<br>
+            <b>샷: </b>「스펙트럼 미스터리」<br>
+            <b>스펠 카드: </b>마부「아트풀 새크리파이스」<br>
+            <b>라스트 스펠: </b>마조「리턴 인애니메이트니스」<br>
+        </p>
+    </div>
+    <div class="col">
+        <p><i><b>평범한 흑마술 소녀.</b><br>어쨌든 화력은 최대 출력으로.</i></p>
+        <p class="left verbose"><b>이동속도: </b>★★★★★★<br>
+            <b>특기: </b>항상 아이템 회수가 가능하다.<br>
+            <b>샷: </b>「스타더스트 미사일」<br>
+            <b>스펠 카드: </b>연부「마스터 스파크」<br>
+            <b>라스트 스펠: </b>마포「파이널 스파크」<br>
+        </p>
+    </div>
+    {% else %}
+    <div class="col">
+        <p><i><b>평범한 흑마술 소녀.</b><br>어쨌든 화력은 최대 출력으로.</i></p>
+        <p class="left verbose"><b>이동속도: </b>★★★★★★<br>
+            <b>특기: </b>항상 아이템 회수가 가능하다.<br>
+            <b>샷: </b>「스타더스트 미사일」<br>
+            <b>스펠 카드: </b>연부「마스터 스파크」<br>
+            <b>라스트 스펠: </b>마포「파이널 스파크」<br>
+        </p>
+    </div>
+    <div class="col">
+        <p><i><b>인형을 부리는 마법사.</b><br>인형은 불평하지 않기 때문에 행복.</i></p>
+        <p class="left verbose"><b>이동속도: </b>★★<br>
+            <b>사역마: </b>「상하이 인형」<br>
+            <b>샷: </b>「스펙트럼 미스터리」<br>
+            <b>스펠 카드: </b>마부「아트풀 새크리파이스」<br>
+            <b>라스트 스펠: </b>마조「리턴 인애니메이트니스」<br>
+        </p>
+    </div>
+    {% endif %}
+</div>

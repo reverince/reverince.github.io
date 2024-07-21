@@ -1,0 +1,86 @@
+<div class="row align-items-center">
+    <h2 class="team-title scale-x" style="text-shadow: 4px 4px 5px rgb(140, 200, 250)"><b>유명<small>의
+            </small>주인</b><small> 팀</small></h2>
+    <p><i>명계에 사는 <b>망령</b>과 <b>반망령</b>.</i></p>
+    {% if art.swap-text == True %}
+    <div class="col">
+        <h4><small>○</small>요괴조술</h4>
+        <div class="scale-x">
+            <h3 style="color: rgb(250, 180, 240); text-shadow: 4px 4px 5px rgb(250, 180, 240); margin-bottom: 0">
+                화서의 망령</h3>
+            <h2 class="b" style="color: rgb(250, 180, 240); text-shadow: 4px 4px 5px rgb(250, 180, 240)">사이교우지 유유코
+            </h2>
+        </div>
+    </div>
+    <div class="col">
+        <h4><small>△</small>반인조술</h4>
+        <div class="scale-x">
+            <h3 style="color: rgb(140, 200, 250); text-shadow: 4px 4px 5px rgb(140, 200, 250); margin-bottom: 0">
+                반인반령</h3>
+            <h2 class="b" style="color: rgb(140, 200, 250); text-shadow: 4px 4px 5px rgb(140, 200, 250)">콘파쿠 요우무
+            </h2>
+        </div>
+    </div>
+    {% else %}
+    <div class="col">
+        <h4><small>△</small>반인조술</h4>
+        <div class="scale-x">
+            <h3 style="color: rgb(140, 200, 250); text-shadow: 4px 4px 5px rgb(140, 200, 250); margin-bottom: 0">
+                반인반령</h3>
+            <h2 class="b" style="color: rgb(140, 200, 250); text-shadow: 4px 4px 5px rgb(140, 200, 250)">콘파쿠 요우무
+            </h2>
+        </div>
+    </div>
+    <div class="col">
+        <h4><small>○</small>요괴조술</h4>
+        <div class="scale-x">
+            <h3 style="color: rgb(250, 180, 240); text-shadow: 4px 4px 5px rgb(250, 180, 240); margin-bottom: 0">
+                화서의 망령</h3>
+            <h2 class="b" style="color: rgb(250, 180, 240); text-shadow: 4px 4px 5px rgb(250, 180, 240)">사이교우지 유유코
+            </h2>
+        </div>
+    </div>
+    {% endif %}
+</div>
+{% include img_container.html %}
+<div class="row">
+    {% if art.swap-text == True %}
+    <div class="col">
+        <p><i><b>명계에 사는 순수한<sub>(?)</sub> 망령 소녀.</b><br>적당히 쏘고 있으면 맞잖아?</i></p>
+        <p class="left verbose"><b>이동속도: </b>★<br>
+            <b>사역마: </b>「사접령」<br>
+            <b>샷: </b>「대안의 유혹」<br>
+            <b>스펠 카드: </b>사부「개스틀리 드림」<br>
+            <b>라스트 스펠: </b>사접「화서의 영면」<br>
+        </p>
+    </div>
+    <div class="col">
+        <p><i><b>인간과 유령의 혼혈.</b><br>반 사람 × 2는 정말 한 사람 몫인가?</i></p>
+        <p class="left verbose"><b>이동속도: </b>★★★★★★<br>
+            <b>사역마: </b>「반령」<br>
+            <b>샷: </b>「육도괴기」<br>
+            <b>스펠 카드: </b>인부「현세참」<br>
+            <b>라스트 스펠: </b>인귀「미래영겁참」<br>
+        </p>
+    </div>
+    {% else %}
+    <div class="col">
+        <p><i><b>인간과 유령의 혼혈.</b><br>반 사람 × 2는 정말 한 사람 몫인가?</i></p>
+        <p class="left verbose"><b>이동속도: </b>★★★★★★<br>
+            <b>사역마: </b>「반령」<br>
+            <b>샷: </b>「육도괴기」<br>
+            <b>스펠 카드: </b>인부「현세참」<br>
+            <b>라스트 스펠: </b>인귀「미래영겁참」<br>
+        </p>
+    </div>
+    <div class="col">
+        <p><i><b>명계에 사는 순수한<sub>(?)</sub> 망령 소녀.</b><br>적당히 쏘고 있으면 맞잖아?</i></p>
+        <p class="left verbose"><b>이동속도: </b>★<br>
+            <b>사역마: </b>「사접령」<br>
+            <b>샷: </b>「대안의 유혹」<br>
+            <b>스펠 카드: </b>사부「개스틀리 드림」<br>
+            <b>라스트 스펠: </b>사접「화서의 영면」<br>
+        </p>
+    </div>
+    {% endif %}
+</div>

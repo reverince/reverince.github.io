@@ -1,0 +1,15 @@
+- artist: 호시
+  swap-text: False
+  src-bg: TeamGhost-HoshII_1213-BG.png
+  src-r: TeamGhost-HoshII_1213-Ch-R.png
+  z-src-r: 0
+  src-bg-r: TeamGhost-HoshII_1213-BG-R.png
+  z-src-bg-r: 1
+  src-l: TeamGhost-HoshII_1213-Ch-L.png
+  z-src-l: 2
+  src-bg-l: TeamGhost-HoshII_1213-BG-L.png
+  z-src-bg-l: 3
+- artist: E-BAE
+  swap-text: False
+  src: TeamGhost-ebae24h-Ch.png
+  src-hv: TeamGhost-ebae24h-Ch-Hv.png

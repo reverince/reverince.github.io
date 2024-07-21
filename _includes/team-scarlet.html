@@ -1,0 +1,86 @@
+<div class="row align-items-center">
+    <h2 class="team-title scale-x" style="text-shadow: 4px 4px 5px rgb(250, 120, 120)"><b>몽환<small>의
+            </small>홍마</b><small> 팀</small></h2>
+    <p><i>홍마관에 사는 <b>흡혈귀</b>와 <b>인간 메이드</b>.</i></p>
+    {% if art.swap-text %}
+    <div class="col">
+        <h4><small>○</small>요괴조술</h4>
+        <div class="scale-x">
+            <h3 style="color: rgb(250, 120, 120); text-shadow: 4px 4px 5px rgb(250, 120, 120); margin-bottom: 0">붉은
+                악마</h3>
+            <h2 class="b" style="color: rgb(250, 120, 120); text-shadow: 4px 4px 5px rgb(250, 120, 120)">레밀리아 스칼렛
+            </h2>
+        </div>
+    </div>
+    <div class="col">
+        <h4><small>□</small>인간조술</h4>
+        <div class="scale-x">
+            <h3 style="color: rgb(110, 190, 250); text-shadow: 4px 4px 5px rgb(110, 190, 250); margin-bottom: 0">
+                홍마관의 메이드</h3>
+            <h2 class="b" style="color: rgb(110, 190, 250); text-shadow: 4px 4px 5px rgb(110, 190, 250)">이자요이 사쿠야
+            </h2>
+        </div>
+    </div>
+    {% else %}
+    <div class="col">
+        <h4><small>□</small>인간조술</h4>
+        <div class="scale-x">
+            <h3 style="color: rgb(110, 190, 250); text-shadow: 4px 4px 5px rgb(110, 190, 250); margin-bottom: 0">
+                홍마관의 메이드</h3>
+            <h2 class="b" style="color: rgb(110, 190, 250); text-shadow: 4px 4px 5px rgb(110, 190, 250)">이자요이 사쿠야
+            </h2>
+        </div>
+    </div>
+    <div class="col">
+        <h4><small>○</small>요괴조술</h4>
+        <div class="scale-x">
+            <h3 style="color: rgb(250, 120, 120); text-shadow: 4px 4px 5px rgb(250, 120, 120); margin-bottom: 0">붉은
+                악마</h3>
+            <h2 class="b" style="color: rgb(250, 120, 120); text-shadow: 4px 4px 5px rgb(250, 120, 120)">레밀리아 스칼렛
+            </h2>
+        </div>
+    </div>
+    {% endif %}
+</div>
+{% include img_container.html %}
+<div class="row">
+    {% if art.swap-text %}
+    <div class="col">
+        <p><i><b>붉은 악마.</b><br>밤에는 유치하고 반칙적인 힘을 발휘.</i></p>
+        <p class="left verbose"><b>이동속도: </b>★★★<br>
+            <b>사역마: </b>「서번트 플라이어」<br>
+            <b>샷: </b>「나이트 댄스」<br>
+            <b>스펠 카드: </b>홍부「불야성 레드」<br>
+            <b>라스트 스펠: </b>홍마「스칼렛 데빌」<br>
+        </p>
+    </div>
+    <div class="col">
+        <p><i><b>완벽하고 산뜻한 메이드.</b><br>나이프 던지기는 환상술사의 기본.</i></p>
+        <p class="left verbose"><b>이동속도: </b>★★★★<br>
+            <b>특기: </b>아이템의 낙하 속도가 느리다.<br>
+            <b>샷: </b>「미스테리어스 잭」<br>
+            <b>스펠 카드: </b>환부「살인 인형」<br>
+            <b>라스트 스펠: </b>환장「밤안개의 환영살인귀」<br>
+        </p>
+    </div>
+    {% else %}
+    <div class="col">
+        <p><i><b>완벽하고 산뜻한 메이드.</b><br>나이프 던지기는 환상술사의 기본.</i></p>
+        <p class="left verbose"><b>이동속도: </b>★★★★<br>
+            <b>특기: </b>아이템의 낙하 속도가 느리다.<br>
+            <b>샷: </b>「미스테리어스 잭」<br>
+            <b>스펠 카드: </b>환부「살인 인형」<br>
+            <b>라스트 스펠: </b>환장「밤안개의 환영살인귀」<br>
+        </p>
+    </div>
+    <div class="col">
+        <p><i><b>붉은 악마.</b><br>밤에는 유치하고 반칙적인 힘을 발휘.</i></p>
+        <p class="left verbose"><b>이동속도: </b>★★★<br>
+            <b>사역마: </b>「서번트 플라이어」<br>
+            <b>샷: </b>「나이트 댄스」<br>
+            <b>스펠 카드: </b>홍부「불야성 레드」<br>
+            <b>라스트 스펠: </b>홍마「스칼렛 데빌」<br>
+        </p>
+    </div>
+    {% endif %}
+</div>

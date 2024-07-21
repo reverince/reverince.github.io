@@ -1,0 +1,88 @@
+<div class="container">
+    <div class="row justify-content-sm-center align-items-center">
+        <h2 class="team-title scale-x" style="text-shadow: 4px 4px 5px rgb(240, 160, 250)"><b>환상<small>의
+                </small>결계</b><small> 팀</small></h2>
+        <p><i>경계에 사는 <b>인간</b>과 <b>요괴</b>.</i></p>
+        {% if art.swap-text == True %}
+        <div class="col">
+            <h4><small>○</small>요괴조술</h4>
+            <div class="scale-x">
+                <h3 style="color: rgb(240, 160, 250); text-shadow: 4px 4px 5px rgb(240, 160, 250); margin-bottom: 0">
+                    경계에 숨은 요괴</h3>
+                <h2 class="b" style="color: rgb(240, 160, 250); text-shadow: 4px 4px 5px rgb(240, 160, 250)">야쿠모 유카리
+                </h2>
+            </div>
+        </div>
+        <div class="col">
+            <h4><small>□</small>인간조술</h4>
+            <div class="scale-x">
+                <h3 style="color: rgb(250, 140, 160); text-shadow: 4px 4px 5px rgb(250, 140, 160); margin-bottom: 0">
+                    낙원의 멋진 무녀</h3>
+                <h2 class="b" style="color: rgb(250, 140, 160); text-shadow: 4px 4px 5px rgb(250, 140, 160)">하쿠레이 레이무
+                </h2>
+            </div>
+        </div>
+        {% else %}
+        <div class="col">
+            <h4><small>□</small>인간조술</h4>
+            <div class="scale-x">
+                <h3 style="color: rgb(250, 140, 160); text-shadow: 4px 4px 5px rgb(250, 140, 160); margin-bottom: 0">
+                    낙원의 멋진 무녀</h3>
+                <h2 class="b" style="color: rgb(250, 140, 160); text-shadow: 4px 4px 5px rgb(250, 140, 160)">하쿠레이 레이무
+                </h2>
+            </div>
+        </div>
+        <div class="col">
+            <h4><small>○</small>요괴조술</h4>
+            <div class="scale-x">
+                <h3 style="color: rgb(240, 160, 250); text-shadow: 4px 4px 5px rgb(240, 160, 250); margin-bottom: 0">
+                    경계에 숨은 요괴</h3>
+                <h2 class="b" style="color: rgb(240, 160, 250); text-shadow: 4px 4px 5px rgb(240, 160, 250)">야쿠모 유카리
+                </h2>
+            </div>
+        </div>
+        {% endif %}
+    </div>
+    {% include img_container.html %}
+    <div class="row">
+        {% if art.swap-text == True %}
+        <div class="col">
+            <p><i><b>환상경계에 사는 요괴.</b><br>언제나 식신에게 맡겨두기 때문에 편하다.</i></p>
+            <p class="left verbose"><b>이동속도: </b>★<br>
+                <b>사역마: </b>「소환 야쿠모 식신(란)」<br>
+                <b>샷: </b>「요회침」<br>
+                <b>스펠 카드: </b>경부「사중결계」<br>
+                <b>라스트 스펠: </b>경계「영야사중결계」<br>
+            </p>
+        </div>
+        <div class="col">
+            <p><i><b>낙원의 멋진 무녀.</b><br>유도 성능을 가진 공격이 사기적이다.</i></p>
+            <p class="left verbose"><b>이동속도: </b>★★★★<br>
+                <b>특기: </b>적의 사역마에 맞지 않는다.<br>
+                <b>샷: </b>「마인드 아뮬렛」<br>
+                <b>스펠 카드: </b>영부「몽상묘주」<br>
+                <b>라스트 스펠: </b>신령「몽상봉인 순」<br>
+            </p>
+        </div>
+        {% else %}
+        <div class="col">
+            <p><i><b>낙원의 멋진 무녀.</b><br>유도 성능을 가진 공격이 사기적이다.</i></p>
+            <p class="left verbose"><b>이동속도: </b>★★★★<br>
+                <b>특기: </b>적의 사역마에 맞지 않는다.<br>
+                <b>샷: </b>「마인드 아뮬렛」<br>
+                <b>스펠 카드: </b>영부「몽상묘주」<br>
+                <b>라스트 스펠: </b>신령「몽상봉인 순」<br>
+            </p>
+        </div>
+        <div class="col">
+            <p><i><b>환상경계에 사는 요괴.</b><br>언제나 식신에게 맡겨두기 때문에 편하다.</i></p>
+            <p class="left verbose"><b>이동속도: </b>★<br>
+                <b>사역마: </b>「소환 야쿠모 식신(란)」<br>
+                <b>샷: </b>「요회침」<br>
+                <b>스펠 카드: </b>경부「사중결계」<br>
+                <b>라스트 스펠: </b>경계「영야사중결계」<br>
+            </p>
+        </div>
+        {% endif %}
+    </div>
+</div>

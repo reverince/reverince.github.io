@@ -1,0 +1,9 @@
+defaults:
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      lang: "ko"
+
+exclude:
+  - README.md
