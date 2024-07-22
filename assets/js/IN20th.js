@@ -149,8 +149,8 @@ window.addEventListener('load', (event) => {
     const slideUpElements = document.querySelectorAll('.slide-up');
     const slideUpPersistElements = document.querySelectorAll('.slide-up-persist');
     const updateSlide = () => {
-        const highH = window.innerHeight * 0.4;
-        const lowH = window.innerHeight * 0.6;
+        const highH = window.innerHeight * 0.3;
+        const lowH = window.innerHeight * 0.7;
         slideUpElements.forEach(element => {
             const rect = element.getBoundingClientRect();
             if (highH < rect.bottom && rect.top < lowH) {
