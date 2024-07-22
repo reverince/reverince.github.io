@@ -36,6 +36,7 @@ window.addEventListener('resize', setImgsMaxHeight);
 
 // Load
 
+let sectionElements;
 let lastVideoIndex = 1;
 window.addEventListener('load', (event) => {
     console.log('Welcome to TH IN 20th Anniversary Collaboration.\nPlease refrain from redistributing the artworks without permission. Thank you! 😇');
@@ -100,17 +101,21 @@ window.addEventListener('load', (event) => {
         { id: 'stage-EX', n: 'ex' },
         { id: 'contributors', n: 'ex' },
     ];
-    const sectionElements = sections.map((section, index) => {
-        const element = document.getElementById(section.id);
-        const rect = element.getBoundingClientRect();
-        const offset = window.scrollY;
-        return {
-            ...section,
-            top: offset + rect.top - window.innerHeight * 0.3,
-            bottom: offset + rect.bottom + window.innerHeight * 0.31,
-        };
-    });
+    const refreshSectionElements = () => {
+        sectionElements = sections.map((section, index) => {
+            const element = document.getElementById(section.id);
+            const rect = element.getBoundingClientRect();
+            const offset = window.scrollY;
+            return {
+                ...section,
+                top: offset + rect.top - window.innerHeight * 0.3,
+                bottom: offset + rect.bottom + window.innerHeight * 0.31,
+            };
+        });
+    };
     const updateBgVideo = () => {
+        refreshSectionElements();
+        
         const videoElement = document.getElementById('bg-video');
         const videoElement2 = document.getElementById('bg-video-2');
 

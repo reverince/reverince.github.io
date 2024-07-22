@@ -12,7 +12,7 @@ body::before {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.5);
+    background: rgba(0, 0, 0, 0.7);
     background-image: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 12.5%, transparent 12.5%, transparent 50%, rgba(255, 255, 255, 0.05) 50%, rgba(255, 255, 255, 0.05) 62.5%, transparent 62.5%, transparent 100%);
     background-size: 8px 8px;
     background-attachment: fixed;
@@ -218,7 +218,7 @@ img.appear {
     transform: translate(-50%, -50%);
     min-width: 100%;
     height: 100vh;
-    filter: saturate(50%);
+    filter: saturate(30%);
     transition: opacity 3s ease-in-out;
 }
 
