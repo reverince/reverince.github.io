@@ -1,24 +1,13 @@
 // Common
-
 const now = new Date();
 
 // Enable tooltips
-
 const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
 const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
 
 // BGM
-
+const bgmSimple = document.getElementById('bgm-simple');
 const bgm = document.getElementById('bgm');
-if (bgm) {
-    bgm.volume = 0.5;
-    bgm.addEventListener('play', () => {
-        const slideUpBgmElements = document.querySelectorAll('.slide-up-bgm');
-        slideUpBgmElements.forEach(element => {
-            element.classList.add('visible');
-        });
-    });
-}
 
 // img max-height
 const setImgsMaxHeight = () => {
@@ -38,6 +27,7 @@ window.addEventListener('resize', setImgsMaxHeight);
 
 let sectionElements;
 let lastVideoIndex = 1;
+let simpleBgmSelected = true;
 window.addEventListener('load', (event) => {
     console.log('Welcome to TH IN 20th Anniversary Collaboration.\nPlease refrain from redistributing the artworks without permission. Thank you! 😇');
 
@@ -87,6 +77,7 @@ window.addEventListener('load', (event) => {
     // section
     const sections = [
         { id: 'title', n: 4 },
+        { id: 'prologue', n: 4 },
         { id: 'team-boundary', n: 1 },
         { id: 'team-magic', n: 1 },
         { id: 'team-scarlet', n: 1 },
@@ -113,6 +104,8 @@ window.addEventListener('load', (event) => {
             };
         });
     };
+    
+    // Update BG video
     const updateBgVideo = () => {
         refreshSectionElements();
         
@@ -125,7 +118,7 @@ window.addEventListener('load', (event) => {
             if (scrollPosition >= section.top && scrollPosition <= section.bottom) {
                 const lastVideo = lastVideoIndex == 1 ? videoElement2 : videoElement;
                 const lastSrc = lastVideo.querySelector('source').getAttribute('src');
-                const newSrc = `/assets/img/bg/bg-${section.n}.webm`;
+                const newSrc = `/assets/IN20th/bg-${section.n}.webm`;
                 if (lastSrc != newSrc)
                 {
                     const targetVideo = lastVideoIndex == 1 ? videoElement : videoElement2;
@@ -144,6 +137,21 @@ window.addEventListener('load', (event) => {
     updateBgVideo();
     window.addEventListener('scroll', updateBgVideo);
     window.addEventListener('resize', updateBgVideo);
+
+    // Update BGM
+    const updateBgm = () => {
+        const triggerTop = document.getElementById('team-boundary').getBoundingClientRect().top;
+        const triggerBottom = document.getElementById('contributors').getBoundingClientRect().top;
+        if (window.innerHeight >= triggerTop && window.innerHeight < triggerBottom && simpleBgmSelected) {
+            crossfade(bgmSimple, bgm, bgmSimple.currentTime);
+            simpleBgmSelected = false;
+        } else if (!simpleBgmSelected && (window.innerHeight < triggerTop || window.innerHeight >= triggerBottom)) {
+            crossfade(bgm, bgmSimple, bgm.currentTime);
+            simpleBgmSelected = true;
+        }
+    };
+    window.addEventListener('scroll', updateBgm);
+    window.addEventListener('resize', updateBgm);
 
     // slide-up
     const slideUpElements = document.querySelectorAll('.slide-up');
@@ -187,22 +195,40 @@ window.addEventListener('load', (event) => {
     window.addEventListener('scroll', updateSilhouette);
     window.addEventListener('resize', updateSilhouette);
 
+
     // hover
     const hoverWrappers = document.querySelectorAll('.hv-wrapper');
     hoverWrappers.forEach(wrapper => {
-        const hoverImage = wrapper.querySelector('.hv');
+        const hoverImages = wrapper.querySelectorAll('.hv');
         const nonHoverImages = wrapper.querySelectorAll('.non-hv');
+        const hoverSlideUpImages = wrapper.querySelectorAll('.hv-slide-up');
+        let timeoutIds = [];
         wrapper.addEventListener('mouseover', () => {
-            hoverImage.style.opacity = 1;
+            hoverImages.forEach(hoverImage => {
+                hoverImage.style.opacity = 1;
+            });
             nonHoverImages.forEach(image => {
                 image.style.opacity = 0;
             })
+            for (let i = 0; i < hoverSlideUpImages.length; i++) {
+                const timeoutId = setTimeout(function() {
+                    hoverSlideUpImages[i].classList.add('visible');
+                }, i * 500);
+                timeoutIds.push(timeoutId);
+            }
         });
         wrapper.addEventListener('mouseout', () => {
-            hoverImage.style.opacity = 0;
+            hoverImages.forEach(hoverImage => {
+                hoverImage.style.opacity = 0;
+            });
             nonHoverImages.forEach(image => {
                 image.style.opacity = 1;
             })
+            timeoutIds.forEach(id => clearTimeout(id));
+            timeoutIds = [];
+            for (let i = 0; i < hoverSlideUpImages.length; i++) {
+                hoverSlideUpImages[i].classList.remove('visible');
+            }
         });
     });
     const duoHoverWrappers = document.querySelectorAll('.duo-hv-wrapper')
@@ -260,6 +286,20 @@ function scrollToSection(section) {
     const absouteElementTop = rect.top + window.scrollY;
     const middleOfViewport = window.innerHeight * 0.5;
     window.scrollTo({ top: absouteElementTop - middleOfViewport, behavior: 'instant' });
+}
+
+function crossfade(audioOut, audioIn, currentTime) {
+    audioIn.currentTime = currentTime;
+    audioIn.play();
+    const fadeOutInterval = setInterval(() => {
+        if (audioOut.volume > 0) {
+            audioOut.volume = Math.max(audioOut.volume - 0.1, 0);
+            audioIn.volume = Math.min(audioIn.volume + 0.1, 1);
+        } else {
+            clearInterval(fadeOutInterval);
+            audioOut.pause();
+        }
+    }, 500);
 }
 
 // Random text

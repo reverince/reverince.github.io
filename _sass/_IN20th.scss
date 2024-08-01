@@ -89,14 +89,14 @@ a:hover {
 }
 
 .verbose {
-    color: rgba(255, 255, 255, 0.6);
+    color: rgba(255, 255, 255, 0.5);
 }
 
 .no-shadow {
     text-shadow: none;
 }
 
-.prologue * {
+.prologue h2, .prologue p {
     margin-bottom: 5em;
 }
 
@@ -145,15 +145,6 @@ a:hover {
     opacity: 1;
     transform: translateY(0);
 }
-.slide-up-bgm {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: opacity 5s ease-in-out, transform 5s ease-out;
-}
-.slide-up-bgm.visible {
-    opacity: 1;
-    transform: translateY(0);
-}
 
 .dark-aura {
     background-color: rgba(0, 0, 0, 0.1);
@@ -170,7 +161,7 @@ a:hover {
 }
 .img-wrapper img {
     position: relative;
-    transition: filter 2s ease-in-out, opacity 1s ease-in-out;
+    transition: filter 2s ease-in-out, opacity 2s ease-in-out;
     max-width: 100%;
     object-fit: contain;
 }
@@ -190,6 +181,15 @@ a:hover {
 .hv-wrapper img.hv, .duo-hv-wrapper img.hv {
     opacity: 0;
 }
+.hv-wrapper img.hv-slide-up, .duo-hv-wrapper img.hv-slide-up {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 2s ease-in-out, transform 2s ease-out;
+}
+.hv-wrapper img.visible, .duo-hv-wrapper img.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
 img.calligraphy {
     width: 200px;
     max-width: 30vw;
@@ -198,6 +198,12 @@ img.appear {
     opacity: 0;
     transition: opacity 3s ease-out;
 }
+.illust {
+    opacity: 0.5;
+    margin-top: 2em;
+    margin-bottom: 2em;
+}
+
 
 // ID
 
