@@ -114,11 +114,12 @@ window.addEventListener('load', (event) => {
             };
         });
     };
+    refreshSectionElements();
+    window.addEventListener('scroll', refreshSectionElements);
+    window.addEventListener('resize', refreshSectionElements);
     
     // Update BG video
     const updateBgVideo = () => {
-        refreshSectionElements();
-        
         const videoElement = document.getElementById('bg-video');
         const videoElement2 = document.getElementById('bg-video-2');
 
@@ -152,7 +153,7 @@ window.addEventListener('load', (event) => {
     const updateBgm = () => {
         const triggerTop = document.getElementById('team-boundary').getBoundingClientRect().top;
         const triggerBottom = document.getElementById('contributors').getBoundingClientRect().top;
-        const scroll = window.scrollY + window.innerHeight * 0.5;
+        const scroll = window.scrollY - window.innerHeight * 0.5;
         if (triggerTop <= scroll && scroll <= triggerBottom && simpleBgmSelected) {
             simpleBgmSelected = false;
             crossfade(bgmSimple, bgm, bgmSimple.currentTime);
@@ -309,8 +310,8 @@ function crossfade(audioOut, audioIn, currentTime) {
     audioIn.play();
     fadeOutInterval = setInterval(() => {
         if (audioOut.volume > 0) {
-            audioOut.volume = Math.max(audioOut.volume - 0.1, 0);
-            audioIn.volume = Math.min(audioIn.volume + 0.1, 1);
+            audioOut.volume = Math.max(audioOut.volume - 0.01, 0);
+            audioIn.volume = Math.min(audioIn.volume + 0.01, 1);
         } else {
             clearInterval(fadeOutInterval);
             audioOut.pause();
