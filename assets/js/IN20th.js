@@ -6,10 +6,12 @@ const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]
 const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
 
 // BGM
-const bgmSimple = document.getElementById('bgm-simple');
 const bgm = document.getElementById('bgm');
+const bgmSimple = document.getElementById('bgm-simple');
 bgm.volume = 0;
+bgm.load();
 bgmSimple.volume = 1;
+bgmSimple.load();
 bgmSimple.addEventListener('play', () => {
     const slideUpBgmElements = document.querySelectorAll('.slide-up-bgm');
     slideUpBgmElements.forEach(element => {
@@ -150,13 +152,13 @@ window.addEventListener('load', (event) => {
     const updateBgm = () => {
         const triggerTop = document.getElementById('team-boundary').getBoundingClientRect().top;
         const triggerBottom = document.getElementById('contributors').getBoundingClientRect().top;
-        const scroll = window.scrollY + window.innerHeight;
+        const scroll = window.scrollY + window.innerHeight * 0.5;
         if (triggerTop <= scroll && scroll <= triggerBottom && simpleBgmSelected) {
-            crossfade(bgmSimple, bgm, bgmSimple.currentTime);
             simpleBgmSelected = false;
+            crossfade(bgmSimple, bgm, bgmSimple.currentTime);
         } else if (!simpleBgmSelected && (scroll < triggerTop || triggerBottom < scroll)) {
-            crossfade(bgm, bgmSimple, bgm.currentTime);
             simpleBgmSelected = true;
+            crossfade(bgm, bgmSimple, bgm.currentTime);
         }
     };
     window.addEventListener('scroll', updateBgm);
@@ -313,7 +315,7 @@ function crossfade(audioOut, audioIn, currentTime) {
             clearInterval(fadeOutInterval);
             audioOut.pause();
         }
-    }, 500);
+    }, 50);
 }
 
 // Random text
