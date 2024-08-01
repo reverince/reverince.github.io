@@ -145,6 +145,15 @@ a:hover {
     opacity: 1;
     transform: translateY(0);
 }
+.slide-up-bgm {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 5s ease-in-out, transform 5s ease-out;
+}
+.slide-up-bgm.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
 
 .dark-aura {
     background-color: rgba(0, 0, 0, 0.1);
@@ -203,7 +212,6 @@ img.appear {
     margin-top: 2em;
     margin-bottom: 2em;
 }
-
 
 // ID
 

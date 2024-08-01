@@ -1,0 +1,15 @@
+- artist: 하경<sub class="ja">夏京</sub>
+  src: Kaguya-StardustReveRlE-Ch.png
+- artist: kim su-no
+  src: Kaguya-blixen020-Ch.png
+- artist: 교토대동방학과
+  src-bg: Kaguya-KuDoT_touhou-BG.png
+  z-src-bg: 0
+  src-bg-hv: Kaguya-KuDoT_touhou-BG-Hv.png
+  z-src-bg-hv: 1
+  src: Kaguya-KuDoT_touhou-Ch.png
+  src-hv: Kaguya-KuDoT_touhou-Ch-Hv.png
+  z-src-hv: 3
+  obj-count: 5
+  src-obj: Kaguya-KuDoT_touhou-Obj
+  z-src-obj: 2

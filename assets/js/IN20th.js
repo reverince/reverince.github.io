@@ -8,6 +8,14 @@ const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstra
 // BGM
 const bgmSimple = document.getElementById('bgm-simple');
 const bgm = document.getElementById('bgm');
+bgm.volume = 0;
+bgmSimple.volume = 1;
+bgmSimple.addEventListener('play', () => {
+    const slideUpBgmElements = document.querySelectorAll('.slide-up-bgm');
+    slideUpBgmElements.forEach(element => {
+        element.classList.add('visible');
+    });
+});
 
 // img max-height
 const setImgsMaxHeight = () => {
@@ -289,10 +297,15 @@ function scrollToSection(section) {
     window.scrollTo({ top: absouteElementTop - middleOfViewport, behavior: 'instant' });
 }
 
+let fadeOutInterval = null;
 function crossfade(audioOut, audioIn, currentTime) {
+    if (fadeOutInterval) {
+        clearInterval(fadeOutInterval);
+    }
     audioIn.currentTime = currentTime;
+    audioIn.volume = 0;
     audioIn.play();
-    const fadeOutInterval = setInterval(() => {
+    fadeOutInterval = setInterval(() => {
         if (audioOut.volume > 0) {
             audioOut.volume = Math.max(audioOut.volume - 0.1, 0);
             audioIn.volume = Math.min(audioIn.volume + 0.1, 1);
