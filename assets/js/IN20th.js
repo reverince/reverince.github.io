@@ -112,10 +112,10 @@ window.addEventListener('load', (event) => {
         const videoElement = document.getElementById('bg-video');
         const videoElement2 = document.getElementById('bg-video-2');
 
-        const scrollPosition = window.scrollY + window.innerHeight * 0.6;
+        const scroll = window.scrollY + window.innerHeight * 0.6;
         let found = false;
         for (let section of sectionElements) {
-            if (scrollPosition >= section.top && scrollPosition <= section.bottom) {
+            if (section.top <= scroll && scroll <= section.bottom) {
                 const lastVideo = lastVideoIndex == 1 ? videoElement2 : videoElement;
                 const lastSrc = lastVideo.querySelector('source').getAttribute('src');
                 const newSrc = `/assets/IN20th/bg-${section.n}.webm`;
@@ -142,10 +142,11 @@ window.addEventListener('load', (event) => {
     const updateBgm = () => {
         const triggerTop = document.getElementById('team-boundary').getBoundingClientRect().top;
         const triggerBottom = document.getElementById('contributors').getBoundingClientRect().top;
-        if (window.innerHeight >= triggerTop && window.innerHeight < triggerBottom && simpleBgmSelected) {
+        const scroll = window.scrollY + window.innerHeight;
+        if (triggerTop <= scroll && scroll <= triggerBottom && simpleBgmSelected) {
             crossfade(bgmSimple, bgm, bgmSimple.currentTime);
             simpleBgmSelected = false;
-        } else if (!simpleBgmSelected && (window.innerHeight < triggerTop || window.innerHeight >= triggerBottom)) {
+        } else if (!simpleBgmSelected && (scroll < triggerTop || triggerBottom < scroll)) {
             crossfade(bgm, bgmSimple, bgm.currentTime);
             simpleBgmSelected = true;
         }
