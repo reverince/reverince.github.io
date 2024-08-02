@@ -88,10 +88,10 @@ window.addEventListener('load', (event) => {
     const sections = [
         { id: 'title', n: 4 },
         { id: 'prologue', n: 4 },
-        { id: 'team-boundary', n: 1 },
-        { id: 'team-magic', n: 1 },
-        { id: 'team-scarlet', n: 1 },
-        { id: 'team-ghost', n: 1 },
+        { id: 'team-boundary', n: 2 },
+        { id: 'team-magic', n: 2 },
+        { id: 'team-scarlet', n: 2 },
+        { id: 'team-ghost', n: 2 },
         { id: 'stage-1', n: 1 },
         { id: 'stage-2', n: 2 },
         { id: 'stage-3', n: 3 },
@@ -106,11 +106,10 @@ window.addEventListener('load', (event) => {
         sectionElements = sections.map((section, index) => {
             const element = document.getElementById(section.id);
             const rect = element.getBoundingClientRect();
-            const offset = window.scrollY;
             return {
                 ...section,
-                top: offset + rect.top - window.innerHeight * 0.3,
-                bottom: offset + rect.bottom + window.innerHeight * 0.31,
+                top: rect.top,
+                bottom: rect.bottom,
             };
         });
     };
@@ -123,7 +122,7 @@ window.addEventListener('load', (event) => {
         const videoElement = document.getElementById('bg-video');
         const videoElement2 = document.getElementById('bg-video-2');
 
-        const scroll = window.scrollY + window.innerHeight * 0.6;
+        const scroll = window.innerHeight * 0.8;
         let found = false;
         for (let section of sectionElements) {
             if (section.top <= scroll && scroll <= section.bottom) {
@@ -153,12 +152,14 @@ window.addEventListener('load', (event) => {
     const updateBgm = () => {
         const triggerTop = document.getElementById('team-boundary').getBoundingClientRect().top;
         const triggerBottom = document.getElementById('contributors').getBoundingClientRect().top;
-        const scroll = window.scrollY - window.innerHeight * 0.5;
+        const scroll = window.innerHeight * 0.8;
         if (triggerTop <= scroll && scroll <= triggerBottom && simpleBgmSelected) {
             simpleBgmSelected = false;
+            console.log('Playing LP-Default.');
             crossfade(bgmSimple, bgm, bgmSimple.currentTime);
         } else if (!simpleBgmSelected && (scroll < triggerTop || triggerBottom < scroll)) {
             simpleBgmSelected = true;
+            console.log('Playing LP-Simple.');
             crossfade(bgm, bgmSimple, bgm.currentTime);
         }
     };

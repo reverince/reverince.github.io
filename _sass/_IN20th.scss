@@ -138,6 +138,7 @@ a:hover {
 }
 .slide-up-persist {
     opacity: 0;
+    margin-bottom: 20px;
     transform: translateY(30px);
     transition: opacity 2s ease-in-out, transform 2s ease-in-out;
 }
