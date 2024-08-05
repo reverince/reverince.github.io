@@ -118,11 +118,10 @@ window.addEventListener('load', (event) => {
     window.addEventListener('resize', refreshSectionElements);
     
     // Update BG video
+    const videoElement = document.getElementById('bg-video');
+    const videoElement2 = document.getElementById('bg-video-2');
     const updateBgVideo = () => {
         console.log('updateBgVideo');
-        const videoElement = document.getElementById('bg-video');
-        const videoElement2 = document.getElementById('bg-video-2');
-
         const scroll = window.innerHeight * 0.8;
         let found = false;
         for (let section of sectionElements) {
@@ -314,8 +313,8 @@ function crossfade(audioOut, audioIn, currentTime) {
     audioIn.play();
     fadeOutInterval = setInterval(() => {
         if (audioOut.volume > 0 || audioIn.volume < 1) {
-            audioOut.volume = Math.max(audioOut.volume - 0.01, 0);
-            audioIn.volume = Math.min(audioIn.volume + 0.01, 1);
+            audioOut.volume = Math.max(audioOut.volume - 0.02, 0);
+            audioIn.volume = Math.min(audioIn.volume + 0.02, 1);
         } else {
             clearInterval(fadeOutInterval);
         }
