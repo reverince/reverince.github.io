@@ -38,3 +38,6 @@
     </div>
 </div>
 <h2><small>Art by </small><b>{{ art.artist }}</b> <span style="font-size: 50%">/ @{{ art.handle }}</span>{% if art.src-hv or art.src-bg-l %} <img class="img" src="/assets/img/icons/images.svg" style="filter: brightness(0) invert(0.6); height: 48px">{% endif %}</h2>
+{% if art.desc %}
+<p>{{ art.desc }}</p>
+{% endif %}
