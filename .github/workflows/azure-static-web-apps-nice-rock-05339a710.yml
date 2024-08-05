@@ -24,6 +24,9 @@ jobs:
           ruby-version: '3.0'
           bundler-cache: true
 
+      - name: Add platform to Gemfile.lock
+        run: bundle lock --add-platform x86_64-linux
+
       - name: Install Bundler
         run: |
           gem install bundler:2.5.10
