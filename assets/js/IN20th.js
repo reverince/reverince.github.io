@@ -118,9 +118,9 @@ window.addEventListener('load', (event) => {
     window.addEventListener('resize', refreshSectionElements);
     
     // Update BG video
-    const videoElement = document.getElementById('bg-video');
-    const videoElement2 = document.getElementById('bg-video-2');
     const updateBgVideo = () => {
+        const videoElement = document.getElementById('bg-video');
+        const videoElement2 = document.getElementById('bg-video-2');
         const scroll = window.innerHeight * 0.8;
         let found = false;
         for (let section of sectionElements) {
