@@ -333,12 +333,12 @@ function debounce(func, wait) {
 // Random text
 
 let teamBoundaryLines = [
-    '<blockquote>보수는 비싸게 받을 거니까 기억해 둬.</blockquote> ― 레이무',
-    '<blockquote>보수는 확실히 지불할게. 난 네가 아니니까.</blockquote> ― 유카리',
-    '<blockquote>나는 그렇다 쳐도, 이 녀석의 역사는 간식거리밖엔 안 될 걸.</blockquote> ― 유카리',
-    '<blockquote>정말이지, 넌 행운이 넘치네. 우리 란한테도 나눠주고 싶을 정도야.</blockquote> ― 유카리',
-    '<blockquote>잘은 모르겠는데, 이 녀석을 쓰러뜨리면 만사 오케이?</blockquote> ― 레이무',
-    '<blockquote>기다리면서 같이 놀 상대를 찾고 있었어?</blockquote> ― 유카리',
+    '<blockquote><big>보</big>수는 비싸게 받을 거니까 기억해 둬.</blockquote> ― 레이무',
+    '<blockquote><big>보</big>수는 확실히 지불할게. 난 네가 아니니까.</blockquote> ― 유카리',
+    '<blockquote><big>나</big>는 그렇다 쳐도, 이 녀석의 역사는 간식거리밖엔 안 될 걸.</blockquote> ― 유카리',
+    '<blockquote><big>정</big>말이지, 넌 행운이 넘치네. 우리 란한테도 나눠주고 싶을 정도야.</blockquote> ― 유카리',
+    '<blockquote><big>잘</big>은 모르겠는데, 이 녀석을 쓰러뜨리면 만사 오케이?</blockquote> ― 레이무',
+    '<blockquote><big>기</big>다리면서 같이 놀 상대를 찾고 있었어?</blockquote> ― 유카리',
 ]
 document.querySelectorAll('.team-boundary-random-line').forEach(line => {
     const index = Math.floor(Math.random() * teamBoundaryLines.length);
@@ -346,16 +346,16 @@ document.querySelectorAll('.team-boundary-random-line').forEach(line => {
     line.innerHTML = text;
 });
 let teamMagicLines = [
-    '<blockquote>태평해서 좋겠네. 달구경이나 하고.</blockquote> ― 앨리스',
-    '<blockquote>어머, 나도 즐기고 있는데? 마리사, 너 이상으로 말이야.</blockquote> ― 앨리스',
-    '<blockquote>마리사가 요괴퇴치라니 웃기는 소리네.</blockquote> ― 앨리스',
-    '<blockquote>그쪽엔 인간밖에 없다구. 그것도 나처럼 선량한 인간 말야.</blockquote> ― 마리사',
-    '<blockquote>뭔 소리야? 마법은 한밤중에 내키는대로 써야 제맛이라고.</blockquote> ― 마리사',
-    '<blockquote>멋진 부분만 뺏어가지 말라고.</blockquote> ― 앨리스',
-    '<blockquote>탄막이 두뇌? 너 바보 아니냐? 탄막은 파워라고.</blockquote> ― 마리사',
-    '<blockquote>탄막은 브레인. 상식이잖아.</blockquote> ― 앨리스',
-    '<blockquote>마리사! 이 녀석을 쏴버려.</blockquote> ― 앨리스',
-    '<blockquote>정신이 나간 녀석들은 보통 달이 원인이지. 딱히 깊은 뜻은 없어.</blockquote> ― 마리사',
+    '<blockquote><big>태</big>평해서 좋겠네. 달구경이나 하고.</blockquote> ― 앨리스',
+    '<blockquote><big>어</big>머, 나도 즐기고 있는데? 마리사, 너 이상으로 말이야.</blockquote> ― 앨리스',
+    '<blockquote><big>마</big>리사가 요괴퇴치라니 웃기는 소리네.</blockquote> ― 앨리스',
+    '<blockquote><big>그</big>쪽엔 인간밖에 없다구. 그것도 나처럼 선량한 인간 말야.</blockquote> ― 마리사',
+    '<blockquote><big>뭔</big> 소리야? 마법은 한밤중에 내키는대로 써야 제맛이라고.</blockquote> ― 마리사',
+    '<blockquote><big>멋</big>진 부분만 뺏어가지 말라고.</blockquote> ― 앨리스',
+    '<blockquote><big>탄</big>막이 두뇌? 너 바보 아니냐? 탄막은 파워라고.</blockquote> ― 마리사',
+    '<blockquote><big>탄</big>막은 브레인. 상식이잖아.</blockquote> ― 앨리스',
+    '<blockquote><big>마</big>리사! 이 녀석을 쏴버려.</blockquote> ― 앨리스',
+    '<blockquote><big>정</big>신이 나간 녀석들은 보통 달이 원인이지. 딱히 깊은 뜻은 없어.</blockquote> ― 마리사',
 ]
 document.querySelectorAll('.team-magic-random-line').forEach(line => {
     const index = Math.floor(Math.random() * teamMagicLines.length);
@@ -363,16 +363,16 @@ document.querySelectorAll('.team-magic-random-line').forEach(line => {
     line.innerHTML = text;
 });
 let teamScarletLines = [
-    '<blockquote>괜찮아, 난 인간 이외엔 흥미가 없으니까.</blockquote> ― 레밀리아',
-    '<blockquote>하아, 무자비한 것도 정도가 있으셔야지.</blockquote> ― 사쿠야',
-    '<blockquote>아가씨, 이 정도 녀석들을 일일이 상대하자면 끝이 없습니다.</blockquote> ― 사쿠야',
-    '<blockquote>튀기는 건 나중에 하고 일단 가죠. 밤은 짧답니다.</blockquote> ― 사쿠야',
-    '<blockquote>저희 저택에 더 이상 지식인은 필요 없답니다…….</blockquote> ― 사쿠야',
-    '<blockquote>아가씨. 잠깐만 시간을 빌려도 괜찮을까요?</blockquote> ― 사쿠야',
-    '<blockquote>우리 지식인은 책만 읽어대서 별로 도움이 안 되는 거 같은데……</blockquote> ― 레밀리아',
-    '<blockquote>피는 특별히 빨지 않을 테니까, 얼른 돌아가도록.</blockquote> ― 레밀리아',
-    '<blockquote>사쿠야, 저 녀석이 나쁜 놈이야. 한눈에 알아챘어. 저 악당 같은 모습 봐봐.</blockquote> ― 레밀리아',
-    '<blockquote>올바른 길로 나아가서 힘으로 압도한다. 이게 불평이 나오지 않게 하는 비결이랍니다.</blockquote> ― 사쿠야',
+    '<blockquote><big>괜</big>찮아, 난 인간 이외엔 흥미가 없으니까.</blockquote> ― 레밀리아',
+    '<blockquote><big>하</big>아, 무자비한 것도 정도가 있으셔야지.</blockquote> ― 사쿠야',
+    '<blockquote><big>아</big>가씨, 이 정도 녀석들을 일일이 상대하자면 끝이 없습니다.</blockquote> ― 사쿠야',
+    '<blockquote><big>튀</big>기는 건 나중에 하고 일단 가죠. 밤은 짧답니다.</blockquote> ― 사쿠야',
+    '<blockquote><big>저</big>희 저택에 더 이상 지식인은 필요 없답니다…….</blockquote> ― 사쿠야',
+    '<blockquote><big>아</big>가씨. 잠깐만 시간을 빌려도 괜찮을까요?</blockquote> ― 사쿠야',
+    '<blockquote><big>우</big>리 지식인은 책만 읽어대서 별로 도움이 안 되는 거 같은데……</blockquote> ― 레밀리아',
+    '<blockquote><big>피</big>는 특별히 빨지 않을 테니까, 얼른 돌아가도록.</blockquote> ― 레밀리아',
+    '<blockquote><big>사</big>쿠야, 저 녀석이 나쁜 놈이야. 한눈에 알아챘어. 저 악당 같은 모습 봐봐.</blockquote> ― 레밀리아',
+    '<blockquote><big>올</big>바른 길로 나아가서 힘으로 압도한다. 이게 불평이 나오지 않게 하는 비결이랍니다.</blockquote> ― 사쿠야',
 ]
 document.querySelectorAll('.team-scarlet-random-line').forEach(line => {
     const index = Math.floor(Math.random() * teamScarletLines.length);
@@ -380,14 +380,14 @@ document.querySelectorAll('.team-scarlet-random-line').forEach(line => {
     line.innerHTML = text;
 });
 let teamGhostLines = [
-    '<blockquote>요우무, 두고 가지 말라니까~</blockquote> ― 유유코',
-    '<blockquote>무슨 말씀을 하시는 겁니까. 밤은 짧다고요! 빨리 적을 찾아 베어 뭉개야 합니다.</blockquote> ― 요우무',
-    '<blockquote>어머. 급할수록 돌아가라는 말 알고 있니?</blockquote> ― 유유코',
-    '<blockquote>그래서, 다음엔 어디로 가면 좋을까요?</blockquote> ― 요우무',
-    '<blockquote>참새는 잔뼈가 많아서 싫어.</blockquote> ― 유유코',
-    '<blockquote>너무하네. 망령을 이상한 사람 취급하다니.</blockquote> ― 유유코',
-    '<blockquote>네? 아, 알겠어요, 벤다니까요.</blockquote> ― 요우무',
-    '<blockquote>그럼 일단은 내 방패가 되려무나.</blockquote> ― 유유코',
+    '<blockquote><big>요</big>우무, 두고 가지 말라니까~</blockquote> ― 유유코',
+    '<blockquote><big>무</big>슨 말씀을 하시는 겁니까. 밤은 짧다고요! 빨리 적을 찾아 베어 뭉개야 합니다.</blockquote> ― 요우무',
+    '<blockquote><big>어</big>머. 급할수록 돌아가라는 말 알고 있니?</blockquote> ― 유유코',
+    '<blockquote><big>그</big>래서, 다음엔 어디로 가면 좋을까요?</blockquote> ― 요우무',
+    '<blockquote><big>참</big>새는 잔뼈가 많아서 싫어.</blockquote> ― 유유코',
+    '<blockquote><big>너</big>무하네. 망령을 이상한 사람 취급하다니.</blockquote> ― 유유코',
+    '<blockquote><big>네</big>? 아, 알겠어요, 벤다니까요.</blockquote> ― 요우무',
+    '<blockquote><big>그</big>럼 일단은 내 방패가 되려무나.</blockquote> ― 유유코',
 ]
 document.querySelectorAll('.team-ghost-random-line').forEach(line => {
     const index = Math.floor(Math.random() * teamGhostLines.length);
@@ -395,98 +395,98 @@ document.querySelectorAll('.team-ghost-random-line').forEach(line => {
     line.innerHTML = text;
 });
 let wriggleLines = [
-    '반딧불이라니까!',
-    '달이 보이는 밤은 즐겨야 하지 않겠어?',
-    '안 덤비면 이쪽에서 먼저 간다!',
-    '호랑이도 제말하면 나타나는 법!',
-    '반딧불을 보고 기뻐하지 않는 녀석들이라니, 정말 간만에 본다!',
-    '그거 혹시 무서운 이야기야?',
+    '<big>반</big>딧불이라니까!',
+    '<big>달</big>이 보이는 밤은 즐겨야 하지 않겠어?',
+    '<big>안</big> 덤비면 이쪽에서 먼저 간다!',
+    '<big>호</big>랑이도 제말하면 나타나는 법!',
+    '<big>반</big>딧불을 보고 기뻐하지 않는 녀석들이라니, 정말 간만에 본다!',
+    '<big>그</big>거 혹시 무서운 이야기야?',
 ]
 let mystiaLines = [
-    '같이 마을에 내려가서 인간들을 놀래켜보지 않을래?',
-    '내가 야맹증으로 만들어줄게!',
-    '이런 밤중에 어딜 가려고?',
-    '밤길에서 날 두려워하지 않는 인간은 없어.',
-    '당신들에겐 내 노랫소리가 안 닿는 거야?',
-    '밤은 인간 사냥 서비스 타임이야.',
+    '<big>같</big>이 마을에 내려가서 인간들을 놀래켜보지 않을래?',
+    '<big>내</big>가 야맹증으로 만들어줄게!',
+    '<big>이</big>런 밤중에 어딜 가려고?',
+    '<big>밤</big>길에서 날 두려워하지 않는 인간은 없어.',
+    '<big>당</big>신들에겐 내 노랫소리가 안 닿는 거야?',
+    '<big>밤</big>은 인간 사냥 서비스 타임이야.',
 ]
 let keineLines = [
-    '오늘 밤을 없던 걸로 만들어주마!',
-    '이 불길한 밤으로부터 사람들을 지키겠어.',
-    '보름달이 없으면 인간이야.',
-    '얼굴만 남기고 변신할 필요는 없잖아? 변신이란 건 온몸으로 하는 거야.',
-    '오늘 밤은 네놈들의 역사로 <ruby>만한전석<rt>滿漢全席</rt></ruby>이다!',
-    '요괴가 하는 말은 못 믿겠는데.',
-    '진짜 어두운 밤의 공포를 가르쳐주지!',
+    '<big>오</big>늘 밤을 없던 걸로 만들어주마!',
+    '<big>이</big> 불길한 밤으로부터 사람들을 지키겠어.',
+    '<big>보</big>름달이 없으면 인간이야.',
+    '<big>얼</big>굴만 남기고 변신할 필요는 없잖아? 변신이란 건 온몸으로 하는 거야.',
+    '<big>오</big>늘 밤은 네놈들의 역사로 <ruby>만한전석<rt>滿漢全席</rt></ruby>이다!',
+    '<big>요</big>괴가 하는 말은 못 믿겠는데.',
+    '<big>진</big>짜 어두운 밤의 공포를 가르쳐주지!',
 ]
 let reimuLines = [
-    '대체 무슨 꿍꿍이신 걸까, 응?',
-    '오늘 너희들 손 좀 봐줘야지 안되겠네 이거.',
-    '달빛이 모인 이 죽림에서 너흰 한 그루 빛나는 대나무가 될 거야. 정말 이쁘겠다, 그치?',
-    '끝나지 않는 밤은 여기서 끝이야!',
-    '나쁜 짓도 적당히들 해 둬.',
-    '내일이 됐는데도 계속 밤이라면 정말 싫겠다~',
+    '<big>대</big>체 무슨 꿍꿍이신 걸까, 응?',
+    '<big>오</big>늘 너희들 손 좀 봐줘야지 안되겠네 이거.',
+    '<big>달</big>빛이 모인 이 죽림에서 너흰 한 그루 빛나는 대나무가 될 거야. 정말 이쁘겠다, 그치?',
+    '<big>끝</big>나지 않는 밤은 여기서 끝이야!',
+    '<big>나</big>쁜 짓도 적당히들 해 둬.',
+    '<big>내</big>일이 됐는데도 계속 밤이라면 정말 싫겠다~',
 ]
 let marisaLines = [
-    '움직이면 쏜다! 아, 이게 아니지. 쏘면 움직일 거다.',
-    '난 평소대로 민폐스런 요괴를 퇴치하러 다니고 있을 뿐이거든.',
-    '이제 슬슬 내일 아침을 받아내야겠어.',
-    '알아듣게 말하라고. 여긴 환상향이야.',
-    '자멸하기 전에 퇴치해버려야겠지.',
-    '잠 깨면 아침이나 되어있길 빌어야지.',
+    '<big>움</big>직이면 쏜다! 아, 이게 아니지. 쏘면 움직일 거다.',
+    '<big>난</big> 평소대로 민폐스런 요괴를 퇴치하러 다니고 있을 뿐이거든.',
+    '<big>이</big>제 슬슬 내일 아침을 받아내야겠어.',
+    '<big>알</big>아듣게 말하라고. 여긴 환상향이야.',
+    '<big>자</big>멸하기 전에 퇴치해버려야겠지.',
+    '<big>잠</big> 깨면 아침이나 되어있길 빌어야지.',
 ]
 let tewiLines = [
-    '마리사는 숲 밖에 집을 장만하면 행복해질 거야~',
-    '사쿠야는 지금 거처를 버리고 독립하면 행복해질 거야~',
-    '요우무는 그 검으로 자신을 찔러보면 더 행복해질 거야~',
-    '나한테 생각이 있으니까 새 장사를 시작하는 게 좋을 거야.',
-    '이 주변엔 귀여운 토끼가 많네.',
-    '나한테 좋은 생각이 있는데……',
-    '다들 내가 말하는 걸 들으면 좀 더 행복해질 수 있어요~',
-    '좀 더 행복해지고 싶으면, 커다란 마음을 가져야 해.',
+    '<big>마</big>리사는 숲 밖에 집을 장만하면 행복해질 거야~',
+    '<big>사</big>쿠야는 지금 거처를 버리고 독립하면 행복해질 거야~',
+    '<big>요</big>우무는 그 검으로 자신을 찔러보면 더 행복해질 거야~',
+    '<big>나</big>한테 생각이 있으니까 새 장사를 시작하는 게 좋을 거야.',
+    '<big>이</big> 주변엔 귀여운 토끼가 많네.',
+    '<big>나</big>한테 좋은 생각이 있는데……',
+    '<big>다</big>들 내가 말하는 걸 들으면 좀 더 행복해질 수 있어요~',
+    '<big>좀</big> 더 행복해지고 싶으면, 커다란 마음을 가져야 해.',
 ]
 let udongeinLines = [
-    '맡겨 주세요. 문은 하나도 빠짐없이 닫아 두었습니다.',
-    '당신들에게 보여줄게. 달의 광기의 모든 것을!',
-    '달은 사람을 미치게 만든다고.',
-    '달토끼인 내 눈을 보고도, 미치지 않은 채로 있을 수 있을까?',
-    '아, 큰일이다! 아직 닫히지 않은 문이 남아있었나.',
-    '아아, 사부님께 야단맞겠다…….',
-    '정말이지, 이상한 녀석들이 다 들어왔네.',
-    '이쪽은 바쁘단 말야. 좀도둑질 말고 볼일 없으면 어서들 돌아가.',
+    '<big>맡</big>겨 주세요. 문은 하나도 빠짐없이 닫아 두었습니다.',
+    '<big>당</big>신들에게 보여줄게. 달의 광기의 모든 것을!',
+    '<big>달</big>은 사람을 미치게 만든다고.',
+    '<big>달</big>토끼인 내 눈을 보고도, 미치지 않은 채로 있을 수 있을까?',
+    '<big>아</big>, 큰일이다! 아직 닫히지 않은 문이 남아있었나.',
+    '<big>아</big>아, 사부님께 야단맞겠다…….',
+    '<big>정</big>말이지, 이상한 녀석들이 다 들어왔네.',
+    '<big>이</big>쪽은 바쁘단 말야. 좀도둑질 말고 볼일 없으면 어서들 돌아가.',
 ]
 let eirinLines = [
-    '곧 아침이 될 거야. 그럼 보름달은 돌려주겠어.',
-    '아침이 올 때까지라면 놀아주지.',
-    '자, 환상향의 여명은 바로 눈앞에 있어!',
-    '인간과 요괴라…… 오늘은 희한한 손님들이 찾아왔는걸.',
-    '능력에도 특허를 인정해야 하는 걸까?',
-    '아침이 되면 보름달은 돌려줄게.',
-    '말보다는 탄막 처방이 필요할 것 같네!',
+    '<big>곧</big> 아침이 될 거야. 그럼 보름달은 돌려주겠어.',
+    '<big>아</big>침이 올 때까지라면 놀아주지.',
+    '<big>자</big>, 환상향의 여명은 바로 눈앞에 있어!',
+    '<big>인</big>간과 요괴라…… 오늘은 희한한 손님들이 찾아왔는걸.',
+    '<big>능</big>력에도 특허를 인정해야 하는 걸까?',
+    '<big>아</big>침이 되면 보름달은 돌려줄게.',
+    '<big>말</big>보다는 탄막 처방이 필요할 것 같네!',
 ]
 let kaguyaLines = [
-    '가끔 찾아오는 손님들은 정중히 대접해줘야지.',
-    '모처럼 폼 잡는데 찬물 끼얹지 말라구~',
-    '여태까지 몸을 숨기고 있느라 그다지 밖으로 못 나가봤을 뿐이야.',
-    '유감스럽게도 진정한 보름달은 여기서밖에 보이지 않아.',
-    '지금까지 수많은 사람을 무릎 꿇린 다섯 가지 문제. 당신들은 몇 개나 풀어낼 수 있을까?',
-    '새벽은 이제 곧 찾아올 거야.',
-    '이상한 이름 붙이지 마!',
-    '너무 지루해서 죽을 맛이라니까.',
+    '<big>가</big>끔 찾아오는 손님들은 정중히 대접해줘야지.',
+    '<big>모</big>처럼 폼 잡는데 찬물 끼얹지 말라구~',
+    '<big>여</big>태까지 몸을 숨기고 있느라 그다지 밖으로 못 나가봤을 뿐이야.',
+    '<big>유</big>감스럽게도 진정한 보름달은 여기서밖에 보이지 않아.',
+    '<big>지</big>금까지 수많은 사람을 무릎 꿇린 다섯 가지 문제. 당신들은 몇 개나 풀어낼 수 있을까?',
+    '<big>새</big>벽은 이제 곧 찾아올 거야.',
+    '<big>이</big>상한 이름 붙이지 마!',
+    '<big>너</big>무 지루해서 죽을 맛이라니까.',
 ]
 let mokouLines = [
-    '목적은 뭐지? 바보 씨.',
-    '어이쿠, 담력 시험이라니!',
-    '언제부터 인간들은 이렇게 바보가 된 거람?',
-    '카구야 저건 언제나, 항상, 날 없애려고만 하고!',
-    '난 죽지 않아. 절대로 죽는 일이 없어. 저 밉살스런 카구야 때문에.',
-    '죽진 않지만 아프다니까~',
-    '죽진 않겠지만 무서워~',
-    '어라, 너무하네. 난 인간도 아니라는 거야?',
-    '딱히 잡아먹지는 않을테니 안심해.',
-    '한 번 손을 대면 어른이 될 수 없고, 두 번 손을 대면 병고를 잊게 되리. 세 번 손을 대면……',
-    '불로불사 같은 건 되지 않는 편이 나아.',
-    '둘 다 나보다 나이 적잖아?',
+    '<big>목</big>적은 뭐지? 바보 씨.',
+    '<big>어</big>이쿠, 담력 시험이라니!',
+    '<big>언</big>제부터 인간들은 이렇게 바보가 된 거람?',
+    '<big>카</big>구야 저건 언제나, 항상, 날 없애려고만 하고!',
+    '<big>난</big> 죽지 않아. 절대로 죽는 일이 없어. 저 밉살스런 카구야 때문에.',
+    '<big>죽</big>진 않지만 아프다니까~',
+    '<big>죽</big>진 않겠지만 무서워~',
+    '<big>어</big>라, 너무하네. 난 인간도 아니라는 거야?',
+    '<big>딱</big>히 잡아먹지는 않을테니 안심해.',
+    '<big>한</big> 번 손을 대면 어른이 될 수 없고, 두 번 손을 대면 병고를 잊게 되리. 세 번 손을 대면……',
+    '<big>불</big>로불사 같은 건 되지 않는 편이 나아.',
+    '<big>둘</big> 다 나보다 나이 적잖아?',
 ]
 document.querySelectorAll('.Wriggle-random-line').forEach(line => {
     const index = Math.floor(Math.random() * wriggleLines.length);
