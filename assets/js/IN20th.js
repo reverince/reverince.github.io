@@ -103,7 +103,6 @@ window.addEventListener('load', (event) => {
         { id: 'contributors', n: 'ex' },
     ];
     const refreshSectionElements = () => {
-        console.log('refreshSectionElements');
         sectionElements = sections.map((section, index) => {
             const element = document.getElementById(section.id);
             const rect = element.getBoundingClientRect();
@@ -115,13 +114,13 @@ window.addEventListener('load', (event) => {
         });
     };
     refreshSectionElements();
+    window.addEventListener('scroll', refreshSectionElements);
     window.addEventListener('resize', refreshSectionElements);
     
     // Update BG video
     const videoElement = document.getElementById('bg-video');
     const videoElement2 = document.getElementById('bg-video-2');
     const updateBgVideo = () => {
-        console.log('updateBgVideo');
         const scroll = window.innerHeight * 0.8;
         let found = false;
         for (let section of sectionElements) {
@@ -151,17 +150,14 @@ window.addEventListener('load', (event) => {
 
     // Update BGM
     const updateBgm = () => {
-        console.log('updateBgm');
         const triggerTop = document.getElementById('team-boundary').getBoundingClientRect().top;
         const triggerBottom = document.getElementById('contributors').getBoundingClientRect().top;
         const scroll = window.innerHeight * 0.8;
         if (triggerTop <= scroll && scroll <= triggerBottom && simpleBgmSelected) {
             simpleBgmSelected = false;
-            console.log('Playing LP-Default.');
             crossfade(bgmSimple, bgm, bgmSimple.currentTime);
         } else if (!simpleBgmSelected && (scroll < triggerTop || triggerBottom < scroll)) {
             simpleBgmSelected = true;
-            console.log('Playing LP-Simple.');
             crossfade(bgm, bgmSimple, bgm.currentTime);
         }
     };
