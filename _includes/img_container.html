@@ -10,6 +10,9 @@
             {% if art.src-bg %}
             <img class="img bg nosize" src="/assets/IN20th/{{ art.src-bg }}" style="z-index: {{ art.z-src-bg }}">
             {% endif %}
+            {% if art.src-bg-2 %}
+            <img class="img bg nosize" src="/assets/IN20th/{{ art.src-bg-2 }}" style="z-index: {{ art.z-src-bg-2 }}">
+            {% endif %}
             {% if art.src-bg-hv %}
             <img class="img bg hv nosize" src="/assets/IN20th/{{ art.src-bg-hv }}" style="z-index: {{ art.z-src-bg-hv }}">
             {% endif %}
@@ -20,7 +23,7 @@
             {% if art.src-l %}
             <img class="img silhouette non-hv ch-l" src="/assets/IN20th/{{ art.src-l }}" style="z-index: {{ art.z-src-l }}; {% if art.style %}{{ art.style }}{% endif %}">
             <img class="img silhouette non-hv nosize ch-r" src="/assets/IN20th/{{ art.src-r }}" style="z-index: {{ art.z-src-r }}">
-            {% else %}
+            {% elsif art.src %}
             <img class="img silhouette non-hv" src="/assets/IN20th/{{ art.src }}" {% if art.style %}style="{{ art.style }}"{% endif %}>
             {% endif %}
             {% if art.src-hv %}

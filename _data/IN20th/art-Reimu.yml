@@ -7,3 +7,7 @@
 - artist: ☯️<sub>(N)</sub>
   handle: Tohou89
   src: Reimu-Tohou89-Ch.png
+  style: z-index:1;
+  src-bg: Reimu-Tohou89-BG.png
+  src-bg-2: Reimu-Tohou89-BG-2.png
+  z-src-bg-2: 2
