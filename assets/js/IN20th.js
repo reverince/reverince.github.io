@@ -101,6 +101,7 @@ window.addEventListener('load', (event) => {
         { id: 'stage-6B', n: '6b' },
         { id: 'stage-EX', n: 'ex' },
         { id: 'contributors', n: 'ex' },
+        { id: 'epilogue', n: 'ex' },
     ];
     const refreshSectionElements = () => {
         sectionElements = sections.map((section, index) => {
@@ -118,29 +119,31 @@ window.addEventListener('load', (event) => {
     window.addEventListener('resize', refreshSectionElements);
     
     // Update BG video
+    const videoElement = document.getElementById('bg-video');
+    const videoElement2 = document.getElementById('bg-video-2');
     const updateBgVideo = () => {
-        const videoElement = document.getElementById('bg-video');
-        const videoElement2 = document.getElementById('bg-video-2');
         const scroll = window.innerHeight * 0.8;
-        let found = false;
         for (let section of sectionElements) {
-            if (section.top <= scroll && scroll <= section.bottom) {
-                const lastVideo = lastVideoIndex == 1 ? videoElement2 : videoElement;
-                const lastSrc = lastVideo.querySelector('source').getAttribute('src');
-                const newSrc = `/assets/IN20th/bg-${section.n}.webm`;
-                if (lastSrc != newSrc)
-                {
-                    const targetVideo = lastVideoIndex == 1 ? videoElement : videoElement2;
-                    targetVideo.querySelector('source').setAttribute('src', newSrc);
-                    targetVideo.load();
-                    targetVideo.play();
-                    targetVideo.style.opacity = 1;
-                    lastVideo.style.opacity = 0;
-                    lastVideoIndex = 1 - lastVideoIndex;
-                }
-                found = true;
-                break;
+            if (scroll < section.bottom) {
+                changeVideo(section.n);
+                return;
             }
+        }
+        changeVideo(4);
+    };
+    const changeVideo = (n) => {
+        const lastVideo = lastVideoIndex == 1 ? videoElement2 : videoElement;
+        const lastSrc = lastVideo.querySelector('source').getAttribute('src');
+        const newSrc = `/assets/IN20th/bg-${n}.webm`;
+        if (lastSrc != newSrc)
+        {
+            const targetVideo = lastVideoIndex == 1 ? videoElement : videoElement2;
+            targetVideo.querySelector('source').setAttribute('src', newSrc);
+            targetVideo.load();
+            targetVideo.play();
+            targetVideo.style.opacity = 1;
+            lastVideo.style.opacity = 0;
+            lastVideoIndex = 1 - lastVideoIndex;
         }
     };
     updateBgVideo();
