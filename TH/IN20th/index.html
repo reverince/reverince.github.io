@@ -22,7 +22,7 @@ lang: ko
 <div class="row">
     <div class="col" style="margin-top: 10vh;">
         <audio id="bgm-simple" src="/assets/IN20th/LPs.mp3" loop controls controlslist="nodownload noplaybackrate"></audio>
-        <audio id="bgm" src="/assets/IN20th/LP.mp3" loop controls controlslist="nodownload noplaybackrate"></audio>
+        <audio id="bgm" src="/assets/IN20th/LP.mp3" loop style="visibility: collapse"></audio>
         <h3><span class="ja glow">竹取飛翔 ～ Lunatic Princess</span><br><small>20th Anniversary Arrange</small></h3>
         <h4><small>편곡: </small><span class="glow"><a href="https://x.com/5minutejamms" target="_blank">E3</a></span></h4>
     </div>
@@ -57,9 +57,6 @@ lang: ko
     <p class="slide-up">물론, 달의 조각을 찾아 환상향의 보름달을 되찾기 위해서.</p>
     <p class="slide-up">찾을 때까지 밤을 멈춰서라도,</p>
     <p class="slide-up"><ruby>영원한 밤<rt>Imperishable Night</rt></ruby>이 이어진다 해도.</p>
-    <div class="img-wrapper slide-up">
-        <img class="img illust" src="/assets/IN20th/Illust-0.png">
-    </div>
     <p class="slide-up" style="line-height: 2">여름 끝, 중추의 명월까지 얼마 남지 않은 무렵,<br>
         두 사람은 밤을 멈춘다.</p>
     <p class="slide-up verbose" style="text-align: right"><small>― 《동방영야초》 프롤로그에서</small></p>
@@ -114,9 +111,6 @@ lang: ko
     <hr class="margin-top-2">
     <div class="container dark-aura slide-up">
         <h3>Stage 1: 반딧불이의 행방</h3>
-        <div class="img-wrapper">
-            <img class="img illust" src="/assets/IN20th/Illust-0.png">
-        </div>
         <p>반딧불이 평소보다 강렬해 보이는 것은 기분 탓일까.<br>오늘 밤은 긴 밤이 될 것이다.</p>
     </div>
     <hr class="margin-bottom">
@@ -125,7 +119,7 @@ lang: ko
     {% for art in site.data.IN20th.art-Wriggle %}
     <div class="container slide-up" id="Wriggle">
         <h4 style="margin-bottom: 0"><i>어둠 속에서 꿈틀대는 빛의 벌레</i></h4>
-        <h2 class="b scale-x" style="color: rgb(120, 180, 140); text-shadow: 4px 4px 5px rgb(120, 180, 140)">리글 나이트버그<br><img src="/assets/IN20th/Calligraphy-Wriggle.png" class="calligraphy" style="filter: drop-shadow(2px 2px 5px rgb(120, 180, 140))"></h2>
+        <h2 class="b scale-x" style="color: rgb(120, 180, 140); text-shadow: 4px 4px 5px rgb(120, 180, 140)">리글 나이트버그</h2>
         {% include img_container.html %}
         <blockquote class="margin-bottom Wriggle-random-line"></blockquote>
     </div>
@@ -146,7 +140,7 @@ lang: ko
     <div class="container slide-up" id="Mystia">
         <h4 style="margin-bottom: 0"><i>요스즈메 요괴</i></h4>
         <h2 class="b scale-x" style="color: rgb(240, 140, 140); text-shadow: 4px 4px 5px rgb(240, 140, 140)">미스티아 로렐라이</h2>
-        <img src="/assets/IN20th/Calligraphy-Mystia.png" class="calligraphy" style="filter: drop-shadow(2px 2px 5px #f08c8c)">
+        
         {% include img_container.html %}
         <blockquote class="margin-bottom Mystia-random-line"></blockquote>
     </div>
@@ -187,7 +181,6 @@ lang: ko
     <div class="container slide-up" id="Reimu">
         <h4 style="margin-bottom: 0"><i>낙원의 멋진 무녀</i></h4>
         <h2 class="b scale-x" style="color: rgb(250, 140, 160); text-shadow: 4px 4px 5px rgb(250, 140, 160)">하쿠레이 레이무</h2>
-        <img src="/assets/IN20th/Calligraphy-Reimu.png" class="calligraphy" style="filter: drop-shadow(2px 2px 5px #fa8ca0)">
         {% include img_container.html %}
         <blockquote class="margin-bottom Reimu-random-line"></blockquote>
     </div>
@@ -208,7 +201,6 @@ lang: ko
     <div class="container slide-up" id="Marisa">
         <h4 style="margin-bottom: 0"><i>평범한 흑마술 소녀</i></h4>
         <h2 class="b scale-x" style="color: rgb(250, 230, 190); text-shadow: 4px 4px 5px rgb(250, 230, 190)">키리사메 마리사</h2>
-        <img src="/assets/IN20th/Calligraphy-Marisa.png" class="calligraphy" style="filter: drop-shadow(2px 2px 5px #fae6be)">
         {% include img_container.html %}
         <blockquote class="margin-bottom Marisa-random-line"></blockquote>
     </div>
@@ -229,7 +221,6 @@ lang: ko
     <div class="container slide-up" id="Tewi">
         <h4 style="margin-bottom: 0"><i>지상의 토끼</i></h4>
         <h2 class="b scale-x" style="color: rgb(250, 190, 190); text-shadow: 4px 4px 5px rgb(250, 190, 190)">이나바 테위</h2>
-        <img src="/assets/IN20th/Calligraphy-Tewi.png" class="calligraphy" style="filter: drop-shadow(2px 2px 5px #fabebe)">
         {% include img_container.html %}
         <blockquote class="margin-bottom Tewi-random-line"></blockquote>
     </div>
@@ -261,7 +252,6 @@ lang: ko
     <div class="container slide-up" id="Eirin">
         <h4 style="margin-bottom: 0"><i>달의 두뇌</i></h4>
         <h2 class="b scale-x" style="color: rgb(200, 120, 120); text-shadow: 4px 4px 5px rgb(200, 120, 120)">야고코로 <span style="color: rgb(120, 120, 200); text-shadow: 4px 4px 5px rgb(120, 120, 200)">에이린</span></h2>
-        <img src="/assets/IN20th/Calligraphy-Eirin.png" class="calligraphy" style="filter: drop-shadow(2px 2px 5px #7878c8)">
         {% include img_container.html %}
         <blockquote class="margin-bottom Eirin-random-line"></blockquote>
     </div>

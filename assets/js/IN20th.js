@@ -103,6 +103,7 @@ window.addEventListener('load', (event) => {
         { id: 'contributors', n: 'ex' },
     ];
     const refreshSectionElements = () => {
+        console.log('refreshSectionElements');
         sectionElements = sections.map((section, index) => {
             const element = document.getElementById(section.id);
             const rect = element.getBoundingClientRect();
@@ -114,11 +115,11 @@ window.addEventListener('load', (event) => {
         });
     };
     refreshSectionElements();
-    window.addEventListener('scroll', refreshSectionElements);
     window.addEventListener('resize', refreshSectionElements);
     
     // Update BG video
     const updateBgVideo = () => {
+        console.log('updateBgVideo');
         const videoElement = document.getElementById('bg-video');
         const videoElement2 = document.getElementById('bg-video-2');
 
@@ -145,11 +146,13 @@ window.addEventListener('load', (event) => {
         }
     };
     updateBgVideo();
+    //const debouncedUpdateBgVideo = debounce(updateBgVideo, 100);
     window.addEventListener('scroll', updateBgVideo);
     window.addEventListener('resize', updateBgVideo);
 
     // Update BGM
     const updateBgm = () => {
+        console.log('updateBgm');
         const triggerTop = document.getElementById('team-boundary').getBoundingClientRect().top;
         const triggerBottom = document.getElementById('contributors').getBoundingClientRect().top;
         const scroll = window.innerHeight * 0.8;
@@ -163,15 +166,16 @@ window.addEventListener('load', (event) => {
             crossfade(bgm, bgmSimple, bgm.currentTime);
         }
     };
-    window.addEventListener('scroll', updateBgm);
-    window.addEventListener('resize', updateBgm);
+    const debouncedUpdateBgm = debounce(updateBgm, 100);
+    window.addEventListener('scroll', debouncedUpdateBgm);
+    window.addEventListener('resize', debouncedUpdateBgm);
 
     // slide-up
     const slideUpElements = document.querySelectorAll('.slide-up');
     const slideUpPersistElements = document.querySelectorAll('.slide-up-persist');
     const updateSlide = () => {
-        const highH = window.innerHeight * 0.3;
-        const lowH = window.innerHeight * 0.7;
+        const highH = window.innerHeight * 0.2;
+        const lowH = window.innerHeight * 0.8;
         slideUpElements.forEach(element => {
             const rect = element.getBoundingClientRect();
             if (highH < rect.bottom && rect.top < lowH) {
@@ -307,17 +311,25 @@ function crossfade(audioOut, audioIn, currentTime) {
         clearInterval(fadeOutInterval);
     }
     audioIn.currentTime = currentTime;
-    audioIn.volume = 0;
     audioIn.play();
     fadeOutInterval = setInterval(() => {
-        if (audioOut.volume > 0) {
+        if (audioOut.volume > 0 || audioIn.volume < 1) {
             audioOut.volume = Math.max(audioOut.volume - 0.01, 0);
             audioIn.volume = Math.min(audioIn.volume + 0.01, 1);
         } else {
             clearInterval(fadeOutInterval);
-            audioOut.pause();
         }
     }, 50);
+}
+
+function debounce(func, wait) {
+    let timeout;
+    return function () {
+        clearTimeout(timeout);
+        timeout = setTimeout(() => {
+            func.apply(this, arguments);
+        }, wait);
+    };
 }
 
 // Random text
@@ -570,20 +582,21 @@ const setDDay = () => {
     const dDayElement = document.getElementById('d-day');
     if (!dDayElement) return;
     const timeDiff = new Date('2004-08-15') - now;
-    const dayDiff = Math.floor(timeDiff / (1000 * 60 * 60 * 24));
+    const dayDiff = Math.floor(-timeDiff / (1000 * 60 * 60 * 24));
     dDayElement.textContent = `D+${Math.abs(dayDiff)}`;
 };
 window.addEventListener('load', setDDay);
 const setDDay20th = () => {
     const dDay20Element = document.getElementById('d-day-20');
     const timeDiff = new Date('2024-08-15') - now;
-    const dayDiff = Math.floor(timeDiff / (1000 * 60 * 60 * 24));
+    const dayDiff = Math.ceil(timeDiff / (1000 * 60 * 60 * 24));
     if (dayDiff > 0) {
         dDay20Element.innerHTML = `D-${dayDiff}`;
     } else if (dayDiff == 0) {
         dDay20Element.innerHTML = `<b>D-DAY</b>`;
     } else {
-        dDay20Element.innerHTML = `D+${Math.abs(dayDiff)}`;
+        const daySince = Math.floor(-timeDiff / (1000 * 60 * 60 * 24));
+        dDay20Element.innerHTML = `D+${daySince}`;
     }
 };
 window.addEventListener('load', setDDay20th);

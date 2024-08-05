@@ -1,4 +1,5 @@
 - artist: 호시
+  handle: HoshII_1213
   swap-text: False
   src-bg: TeamGhost-HoshII_1213-BG.png
   src-r: TeamGhost-HoshII_1213-Ch-R.png
@@ -10,10 +11,12 @@
   src-bg-l: TeamGhost-HoshII_1213-BG-L.png
   z-src-bg-l: 3
 - artist: E-BAE
+  handle: ebae24h
   swap-text: False
   src: TeamGhost-ebae24h-Ch.png
   src-hv: TeamGhost-ebae24h-Ch-Hv.png
 - artist: Thlver
+  handle: tohL1ve_R10
   swap-text: False
   src: TeamGhost-tohL1ve_R10-Ch.png
   src-hv: TeamGhost-tohL1ve_R10-Ch-Hv.png

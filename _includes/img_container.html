@@ -8,22 +8,30 @@
         <div class="img-wrapper">
         {% endif %}
             {% if art.src-bg %}
-            <img class="img bg nosize" src="/assets/img/characters/{{ art.src-bg }}" style="z-index: {{ art.z-src-bg }}">
+            <img class="img bg nosize" src="/assets/IN20th/{{ art.src-bg }}" style="z-index: {{ art.z-src-bg }}">
+            {% endif %}
+            {% if art.src-bg-hv %}
+            <img class="img bg hv nosize" src="/assets/IN20th/{{ art.src-bg-hv }}" style="z-index: {{ art.z-src-bg-hv }}">
             {% endif %}
             {% if art.src-bg-l %}
-            <img class="img bg hv nosize bg-l" src="/assets/img/characters/{{ art.src-bg-l }}" style="z-index: {{ art.z-src-bg-l }}">
-            <img class="img bg hv nosize bg-r" src="/assets/img/characters/{{ art.src-bg-r }}" style="z-index: {{ art.z-src-bg-r }}">
+            <img class="img bg hv nosize bg-l" src="/assets/IN20th/{{ art.src-bg-l }}" style="z-index: {{ art.z-src-bg-l }}">
+            <img class="img bg hv nosize bg-r" src="/assets/IN20th/{{ art.src-bg-r }}" style="z-index: {{ art.z-src-bg-r }}">
             {% endif %}
             {% if art.src-l %}
-            <img class="img silhouette non-hv ch-l" src="/assets/img/characters/{{ art.src-l }}" style="z-index: {{ art.z-src-l }}; {% if art.style %}{{ art.style }}{% endif %}">
-            <img class="img silhouette non-hv nosize ch-r" src="/assets/img/characters/{{ art.src-r }}" style="z-index: {{ art.z-src-r }}">
+            <img class="img silhouette non-hv ch-l" src="/assets/IN20th/{{ art.src-l }}" style="z-index: {{ art.z-src-l }}; {% if art.style %}{{ art.style }}{% endif %}">
+            <img class="img silhouette non-hv nosize ch-r" src="/assets/IN20th/{{ art.src-r }}" style="z-index: {{ art.z-src-r }}">
             {% else %}
-            <img class="img silhouette non-hv" src="/assets/img/characters/{{ art.src }}" {% if art.style %}style="{{ art.style }}"{% endif %}>
+            <img class="img silhouette non-hv" src="/assets/IN20th/{{ art.src }}" {% if art.style %}style="{{ art.style }}"{% endif %}>
             {% endif %}
             {% if art.src-hv %}
-            <img class="img silhouette hv nosize" src="/assets/img/characters/{{ art.src-hv }}">
+            <img class="img silhouette hv nosize" src="/assets/IN20th/{{ art.src-hv }}" style="z-index: {{ art.z-src-hv }}">
+            {% endif %}
+            {% if art.obj-count %}
+            {% for i in (1..art.obj-count) %}
+            <img class="img hv-slide-up nosize" src="/assets/IN20th/{{ art.src-obj }}-{{ i }}.png" style="z-index: {{ art.z-src-obj }}">
+            {% endfor %}
             {% endif %}
         </div>
     </div>
 </div>
-<h2><small>Art by </small><b>{{ art.artist }}</b>{% if art.src-hv or art.src-bg-l %} <img class="img" src="/assets/img/icons/images.svg" style="filter: brightness(0) invert(0.6); height: 48px">{% endif %}</h2>
+<h2><small>Art by </small><b>{{ art.artist }}</b> <span style="font-size: 50%">/ @{{ art.handle }}</span>{% if art.src-hv or art.src-bg-l %} <img class="img" src="/assets/img/icons/images.svg" style="filter: brightness(0) invert(0.6); height: 48px">{% endif %}</h2>

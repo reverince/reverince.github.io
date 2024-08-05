@@ -1,13 +1,16 @@
 - artist: 숭어
+  handle: sseun_4
   swap-text: True
   src: TeamScarlet-sseun_4-Ch.png
 - artist: 사글이
+  handle: sagle1029
   swap-text: True
   src-l: TeamScarlet-sagle1029-Ch-L.png
   src-bg-l: TeamScarlet-sagle1029-BG-L.png
   src-r: TeamScarlet-sagle1029-Ch-R.png
   src-bg-r: TeamScarlet-sagle1029-BG-R.png
 - artist: 강댕
+  handle: touho_0505
   swap-text: True
   src: TeamScarlet-touho_0505-Ch.png
   
